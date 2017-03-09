@@ -1,0 +1,13 @@
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}EtsyDemo</title>
+        {% block css %}{% endblock %}
+    </head>
+   <body>
+         {% include 'nav.html' %}
+         {% block content %}{% endblock %}
+         {% include 'footer.html' %}
+        {% block js %} {% endblock %}
+    </body>
+</html>
+

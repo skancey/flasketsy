@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Welcome to {% endblock %}
+{% block content %}
+    <br /><br />
+    <div id="ShowProfie">
+        <h2>Listing {{ list_id }}</h2>
+        <h3>{{ listing.name }}</h3>
+        <p>${{ listing.price }}</p>
+        <p>{{ listing.description }}</p>
+    </div>
+    <a href="{{ url_for('index') }}">Show All</a><br />
+    <a href="{{ url_for('listing_edit', listing_id=listing.id) }}">Edit Listing</a>
+    <br /><br />
+{% endblock %}

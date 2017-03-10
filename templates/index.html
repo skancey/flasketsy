@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 {% block title %} Welcome to {% endblock %}
 {% block content %}
-<br />
-<br />
+<br /> <br />
     <div class="jumbotron">
   <h1>Hello, world!</h1>
   <p><p>This is flask app.</p></p>
   <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
-
+<br >
+    <div class="center">
+        <div class="row">
+        {% for x in listings %}
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3><a href="{{ url_for('listing_show', listing_id=x.id) }}">{{ x.name }}</a></h1>
+                        <p>{{ x.description[:25] }}</p>
+                        <p>{{ x.price }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+<br /><br />
 {% endblock %}
 
 
